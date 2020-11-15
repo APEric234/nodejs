@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Postal Price Check</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1> Welcome to the Postal price checker</h1>
     <form action="/postageForm" method="POST">
 
       <label class="control-label" for="weight">Weight(lbs): </label>
-      <input class="form-control" type="number" name="weight"> 
+      <input class="form-control" type="number" name="weight" step=".01"> 
       <input class="form-control" type="radio" id ="LettersStamped" name="type" value="letterS">
       <label for="LettersStamped">Letters Stamped</label>
       <input class="form-control" type="radio" id ="LettersMetered" name="type" value="letterM"> 
