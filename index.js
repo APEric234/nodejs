@@ -1,21 +1,11 @@
-const express = require('express');
-const path = require('path');
-const app = express();
-app.get('/', function(req, res){
-  res.render('pages/index.ejs');
-});
+const express = require('express')
+const app = express()
+const port = 3000
 
-app.get('/rentingForm', function(req, res) {
-  res.sendFile("./index.html");
-});
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({extended:true}));
-app.post("/submit-form", (req,res)=>{
-  //the body stores form variables by there name
-
-  const var1= req.body.username;
-  res.render('postageform',{
-    postage:req.body.postage
-  });
-});
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
