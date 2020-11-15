@@ -8,5 +8,7 @@ app.post("/submit-form", (req,res)=>{
   //the body stores form variables by there name
 
   const var1= req.body.username;
-  res.render('postageform')
+  res.render('postageform',{
+    postage:req.body.postage
+  });
 })
