@@ -1,7 +1,14 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const express = require('express');
+const path = require('path');
 const app = express()
+app.get('/', function(req, res){
+  res.render('index');
+});
+
+app.get('/rentingForm', function(req, res) {
+  res.sendFile("./index.html");
+});
+
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:true}))
 app.post("/submit-form", (req,res)=>{
