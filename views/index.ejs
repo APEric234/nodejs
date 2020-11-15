@@ -7,5 +7,15 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <form action="/rentingForm" method="POST">
+
+      <label class="control-label" for="text-input">From </label>
+      <input class="form-control" type="date" name="from"> //from input
+      <label class="control-label" for="password-input" id="to">To </label>
+      <input class="form-control" type="date" name="to">   //to input
+      <input class="btn btn-default" type="submit" value="Search" id="search">
+      </input>
+  </form>
+
   </body>
 </html>
