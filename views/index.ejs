@@ -9,12 +9,17 @@
     <p>Welcome to <%= title %></p>
     <form action="/rentingForm" method="POST">
 
-      <label class="control-label" for="text-input">From </label>
-      <input class="form-control" type="date" name="from"> //from input
-      <label class="control-label" for="password-input" id="to">To </label>
-      <input class="form-control" type="date" name="to">   //to input
+      <label class="control-label" for="weight">Weight(lbs): </label>
+      <input class="form-control" type="number" name="weight"> 
+      <input class="form-control" type="radio" id ="LettersStamped" name="type" value="letterS">
+      <label for="LettersStamped">Letters Stamped</label>
+      <input class="form-control" type="radio" id ="LettersMetered" name="type" value="letterM"> 
+      <label for="LettersMetered">Letters Metered</label>
+      <input class="form-control" type="radio" id ="Envelopes" name="type" value="envelope"> 
+      <label for="Envelopes">Envelope</label>
+      <input class="form-control" type="radio" id ="FCSR" name="type" value="FCSR">  
+      <label for="male">First Class Parcel Service</label>
       <input class="btn btn-default" type="submit" value="Search" id="search">
-      </input>
   </form>
 
   </body>
