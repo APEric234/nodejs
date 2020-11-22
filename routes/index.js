@@ -68,7 +68,6 @@ router.get('/', function(req, res, next) {
 router.post('/postageForm', function(req, res){
   // var from = req.body.from;
   // var to = req.body.to;
-  getMonsters();
   var names = {
     "FCSR":"PACKAGE",
     "letterS":"Letters Stamped",
