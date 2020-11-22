@@ -1,7 +1,7 @@
 var express = require('express');
 const { Client } = require('pg');
 
-function getMonsteres(){
+function getMonsters(){
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: {
@@ -64,11 +64,12 @@ else {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-  getMonsteres();
+  
 });
 router.post('/postageForm', function(req, res){
   // var from = req.body.from;
   // var to = req.body.to;
+  getMonsters();
   var names = {
     "FCSR":"PACKAGE",
     "letterS":"Letters Stamped",
