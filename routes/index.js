@@ -1,5 +1,21 @@
 var express = require('express');
+const { Client } = require('pg');
 const { clearLine } = require('readline');
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+client.connect();
+
+client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
 var router = express.Router();
 function calculatePostage(weight,type){
   //based off zone 1
