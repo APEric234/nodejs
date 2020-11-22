@@ -86,6 +86,6 @@ router.post('/postageForm', function (req, res) {
     price: jim
     });
   });
-  
+  client.close();
 });
 module.exports = router;
