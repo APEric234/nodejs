@@ -73,20 +73,19 @@ router.post('/postageForm', function (req, res) {
       console.log(JSON.stringify(row));
       jim=row["name"];
     }
-    client.end();
-  });
-  console.log(jim);
-  var names = {
-    "FCSR": "PACKAGE",
-    "letterS": "Letters Stamped",
-    "letterM": "Letters Metered",
-    "envelope": "Envelope"
-  }
-  var priceIn = calculatePostage(req.body.weight, req.body.type);
-  res.render('postageForm', {
+    var names = {
+      "FCSR": "PACKAGE",
+      "letterS": "Letters Stamped",
+      "letterM": "Letters Metered",
+      "envelope": "Envelope"
+    }
+    var priceIn = calculatePostage(req.body.weight, req.body.type);
+    res.render('postageForm', {
     type: names[req.body.type],
     weight: req.body.weight,
     price: jim
+    });
   });
+  
 });
 module.exports = router;
