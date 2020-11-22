@@ -75,6 +75,7 @@ router.post('/postageForm', function (req, res) {
     }
     client.end();
   });
+  console.log(jim);
   var names = {
     "FCSR": "PACKAGE",
     "letterS": "Letters Stamped",
