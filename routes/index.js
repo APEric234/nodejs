@@ -66,13 +66,15 @@ router.post('/postageForm', function (req, res) {
     }
   });
   client.connect();
-  var jim;
+
   client.query('select * from monsters;', (err, res) => {
+    var jim;
     if (err) throw err;
     for (let row of res.rows) {
       console.log(JSON.stringify(row));
       jim=row["name"];
     }
+    console.log(jim);
     var names = {
       "FCSR": "PACKAGE",
       "letterS": "Letters Stamped",
@@ -86,6 +88,5 @@ router.post('/postageForm', function (req, res) {
     price: jim
     });
   });
-  client.close();
 });
 module.exports = router;
