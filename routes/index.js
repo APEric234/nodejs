@@ -1,7 +1,6 @@
 var express = require('express');
 const { Client } = require('pg');
 
-function getMonsters(){
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: {
@@ -16,7 +15,7 @@ client.query('SELECT * FROM monsters;', (err, res) => {
   }
   client.end();
 });
-}
+
 var router = express.Router();
 function calculatePostage(weight,type){
   //based off zone 1
