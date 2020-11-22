@@ -8,7 +8,7 @@ const { Client } = require('pg');
     }
   });
   client.connect();
-client.query('SELECT * FROM monsters;', (err, res) => {
+client.query('select * from monsters;', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
