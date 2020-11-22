@@ -63,6 +63,7 @@ else {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+  getMonsteres();
 });
 router.post('/postageForm', function(req, res){
   // var from = req.body.from;
