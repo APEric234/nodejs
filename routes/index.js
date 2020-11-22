@@ -67,10 +67,10 @@ router.post('/postageForm', function (req, res) {
   });
   client.connect();
 
-  client.query('select * from monsters;', (err, res) => {
+  client.query('select * from monsters;', (err, res1) => {
     var jim;
     if (err) throw err;
-    for (let row of res.rows) {
+    for (let row of res1.rows) {
       console.log(JSON.stringify(row));
       jim=row["name"];
     }
