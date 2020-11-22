@@ -56,7 +56,7 @@ router.get('/', function (req, res, next) {
   });
 
 });
-router.post('/postageForm', function (req, res) {
+router.post('/monsters', function (req, res) {
   // var from = req.body.from;
   // var to = req.body.to;
   const client = new Client({
@@ -68,24 +68,15 @@ router.post('/postageForm', function (req, res) {
   client.connect();
 
   client.query('select * from monsters;', (err, res1) => {
-    var jim;
+    var names=[];
     if (err) throw err;
     for (let row of res1.rows) {
       console.log(JSON.stringify(row));
-      jim=row["name"];
+      names.push(row["name"]);
     }
-    console.log(jim);
-    var names = {
-      "FCSR": "PACKAGE",
-      "letterS": "Letters Stamped",
-      "letterM": "Letters Metered",
-      "envelope": "Envelope"
-    }
-    var priceIn = calculatePostage(req.body.weight, req.body.type);
-    res.render('postageForm', {
-    type: names[req.body.type],
-    weight: req.body.weight,
-    price: jim
+    
+    res.render('monsters', {
+    monsters: names
     });
   });
 });

@@ -9,7 +9,12 @@
       <a href="https://peaceful-spire-17672.herokuapp.com/">Home</a>
     </nav>
     <div class='price'><h1>Price</h1>
-      <h2> Your <%= type %> that weighs <%= weight %> would cost <%= price %> to ship</h2>
+      <ul>
+      <% for (var i = 0; i < monsters.length; i ++) { %>
+
+        <li> monsters[i] </li>
+       <% } %>
+      </ul>
   </div>
     
   </body>
