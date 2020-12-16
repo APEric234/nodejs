@@ -8,11 +8,12 @@
     <nav>
       <a href="https://peaceful-spire-17672.herokuapp.com/">Home</a>
     </nav>
+    <script src="../public/javascripts/cookie.js"></script>
     <div class='price'><h1>Roster</h1>
       <ul>
       <% for (var i = 0; i < heros.length; i ++) { %>
         
-       <li><button id="<%= heros[i].split('&')[1] %>">
+       <li><button onclick="setCookie('hero',heros[i].split('&')[1])">
          <%= heros[i].split("&")[0] %>
          <% console.log(heros[i]); %>
         </button>
