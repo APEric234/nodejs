@@ -2,9 +2,24 @@ var express = require('express');
 const {
   Client
 } = require('pg');
+const { get } = require('./users');
 
 
-
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 var router = express.Router();
 
 function calculatePostage(weight, type) {
@@ -16,6 +31,26 @@ router.get('/', function (req, res, next) {
     title: 'Express'
   });
 
+});
+router.post('/battle', function (req, res) {
+  // var from = req.body.from;
+  // var to = req.body.to;
+    var hero = getCookie("hero");
+    var message="";
+    var monster = getCookie("monster");
+    if(monster && hero){
+      if(monster>hero){
+        message = "Sorry you have perished try again";
+      }else{
+        message = "You Defeated the monster!";
+      }
+    }
+ 
+    
+    res.render('battle', {
+    messages: message,
+    });
+  });
 });
 router.post('/heros', function (req, res) {
   // var from = req.body.from;
