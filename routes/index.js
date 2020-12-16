@@ -97,7 +97,7 @@ router.post('/monsters', function (req, res) {
     if (err) throw err;
     for (let row of res1.rows) {
       console.log(JSON.stringify(row));
-      names.push(row["name"]);
+      names.push(row["name"]+"&" + row["m_key"]);
     }
     
     res.render('monsters', {
