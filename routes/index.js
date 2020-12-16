@@ -38,11 +38,16 @@ router.post('/battle', function (req, res) {
     var hero = getCookie("hero");
     var message="";
     var monster = getCookie("monster");
+    var date= new Date();
+    date.setTime(date.getTime() + 2*24*60*60*1000);
     if(monster && hero){
       if(monster>hero){
         message = "Sorry you have perished try again";
+        document.cookie = "monster="+monster + "; expires="+date.toUTCString();
       }else{
         message = "You Defeated the monster!";
+        document.cookie = "hero="+hero + "; expires="+date.toUTCString();
+
       }
     }
  
