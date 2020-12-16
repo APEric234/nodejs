@@ -67,13 +67,13 @@ router.post('/heros', function (req, res) {
   });
   client.connect();
 
-  client.query('select * from monsters;', (err, res1) => {
+  client.query('select * from heros;', (err, res1) => {
     var names=[];
     var id=[];
     if (err) throw err;
     for (let row of res1.rows) {
       console.log(JSON.stringify(row));
-      names.push(row["name"]+"&"+row["m_key"]);
+      names.push(row["name"]+"&"+row["h_id"]);
     }
     
     res.render('heros', {
