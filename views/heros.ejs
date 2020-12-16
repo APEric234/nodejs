@@ -12,12 +12,11 @@
       <ul>
       <% for (var i = 0; i < heros.length; i ++) { %>
         
-       <li><button id='temp'>
+       <li><button id='<%= heros[i].split("&")[1]%>'>
          <%= heros[i].split("&")[0] %>
         </button>
          </li>
        
-       <% document.getElementById("temp").id=heros[i].split("&")[1]; %>
 
        <% } %>
       </ul>
