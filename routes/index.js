@@ -8,46 +8,7 @@ const {
 var router = express.Router();
 
 function calculatePostage(weight, type) {
-  //based off zone 1
-  if (type == "FCSR") {
-    if (weight > 12) {
-      return 5.9;
-    } else if (weight > 8) {
-      return 5.3;
-    } else if (weight > 4) {
-      return 4.6
-    } else {
-      return 3.8;
-
-    }
-  } else if (type == "letterS") {
-    if (weight > 3) {
-      return 1;
-    } else if (weight > 2) {
-      return .85;
-    } else if (weight >= 1) {
-      return .7;
-    } else {
-      return .55;
-
-    }
-  } else if (type == "letterM") {
-    if (weight > 3) {
-      return .95;
-    } else if (weight > 2) {
-      return .8;
-    } else if (weight >= 1) {
-      return .65;
-    } else {
-      return .5;
-    }
-  } else {
-    var baseprice = 1;
-    var increment = .2;
-    var ozx = Math.ceil(weight) - 1;
-    return baseprice + (ozx * increment);
-
-  }
+  
 }
 /* GET home page. */
 router.get('/', function (req, res, next) {
