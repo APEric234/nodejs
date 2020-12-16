@@ -8,21 +8,12 @@
     <nav>
       <a href="https://peaceful-spire-17672.herokuapp.com/">Home</a>
     </nav>
-    <script type="text/javascript">
-    function setCookie(cname,value){
-      var days=3*24*60*60*1000;
-      var d = new Date();
-      d.setTime(d.getTime()+days);
-      var expires="expires="+d.toUTCString();
-      document.cookie=cname+"="+value+"; "+expires;
-
-      }
-    </script>
+    <script src="static/cookie.js"></script>
     <div class='price'><h1>Roster</h1>
       <ul>
       <% for (var i = 0; i < heros.length; i ++) { %>
         
-       <li><button onclick="setCookie('hero',heros[i].split('&')[1])">
+       <li><button id =" <%= heros[i].split('&')[1] %></button>" onclick="setCookie('hero',this.id)">
          <%= heros[i].split("&")[0] %>
          <% console.log(heros[i]); %>
         </button>
