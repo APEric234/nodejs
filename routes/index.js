@@ -51,7 +51,6 @@ router.post('/battle', function (req, res) {
     messages: message,
     });
   });
-});
 router.post('/heros', function (req, res) {
   // var from = req.body.from;
   // var to = req.body.to;
