@@ -4,8 +4,16 @@
     <link rel='stylesheet' href='/stylesheets/arena.css' />
     <title>Arena</title>
   </head>
+      
+  <div id="hero-section">
+    <img id="hero" src="static/images/blank.png">
+</div>
+<div id="monster-section">
+  <img id="monster" src="static/images/blank.png">
+</div>
+  <script src="static/herocookie.js"></script>
   <body>
-    <% document.cookie=cookie %>
+    <% setCookie(type,val) %>
     <nav>
       <a href="https://peaceful-spire-17672.herokuapp.com/">Home</a>
     </nav>
@@ -15,7 +23,7 @@
   <div id="monster-section">
     <img id="monster" src="//:0">
 </div>
-  <script src="static/herocookie.js"></script>
+
 
     <div class='main'>
       <h1><%= messages %></h1>
