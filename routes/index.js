@@ -34,13 +34,11 @@ router.post('/heros', function (req, res) {
     if (err) throw err;
     for (let row of res1.rows) {
       console.log(JSON.stringify(row));
-      names.push(row["name"]);
-      id.push(row["id"]);
+      names.push(row["name"]+"&"+row["M_key"]);
     }
     
     res.render('heros', {
     heros: names,
-    ids:id
     });
   });
 });
