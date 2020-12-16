@@ -20,7 +20,7 @@
       <ul>
       <% for (var i = 0; i < heros.length; i ++) { %>
         
-       <li><button id =" <%= heros[i].split('&')[1] %>" onclick="setCookie('hero',this.id)">
+       <li><button id ="<%= heros[i].split('&')[1] %>" onclick="setCookie('hero',this.id)">
          <%= heros[i].split("&")[0] %>
          <% console.log(heros[i]); %>
         </button>
