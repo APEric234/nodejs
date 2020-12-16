@@ -8,13 +8,21 @@
     <nav>
       <a href="https://peaceful-spire-17672.herokuapp.com/">Home</a>
     </nav>
-    <div class='price'><h1>Price</h1>
+    <div id="hero-section">
+      <img id="hero top" src="static/images/hero1.jpg">
+  </div>
+  <div id="monster-section">
+    <img id="monster top" src="static/images/hero1.jpg">
+</div>
+  <script src="static/herocookie.js"></script>
+    <div class='price'><h1>Choose a monster to fight</h1>
       <ul>
       <% for (var i = 0; i < monsters.length; i ++) { %>
 
-       <li><%=monsters[i]%></li>
-       <% } %>
-      </ul>
+        <li><button id ="<%= monsters[i].split('&')[1] %>" onclick="setCookie('monster',this.id)">
+          <%= monsters[i].split("&")[0] %>
+         </button>
+          </li>
   </div>
     
   </body>
