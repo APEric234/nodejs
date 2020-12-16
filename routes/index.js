@@ -37,16 +37,18 @@ router.post('/battle', function (req, res) {
   // var to = req.body.to;
     var hero = getCookie("hero");
     var message="";
+    var val="";
+    var type="";
     var monster = getCookie("monster");
     var date= new Date();
     date.setTime(date.getTime() + 2*24*60*60*1000);
     if(monster && hero){
       if(monster>hero){
         message = "Sorry you have perished try again";
-        document.cookie = "monster="+monster + "; expires="+date.toUTCString();
+       cookie = "monster="+monster + "; expires="+date.toUTCString();
       }else{
         message = "You Defeated the monster!";
-        document.cookie = "hero="+hero + "; expires="+date.toUTCString();
+        cookie = "hero="+hero + "; expires="+date.toUTCString();
 
       }
     }
@@ -54,6 +56,7 @@ router.post('/battle', function (req, res) {
     
     res.render('battle', {
     messages: message,
+    type:cookie
     });
   });
 router.post('/heros', function (req, res) {
