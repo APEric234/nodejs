@@ -5,6 +5,8 @@ function setCookie(cname,value){
   var expires="expires="+d.toUTCString();
   document.cookie=cname+"="+value+"; "+expires;
   
+  document.getElementById(x).src="static/images/"+"cname"+x.trim()+".jpg";
+  
 
 }
 function getCookie(cname) {
@@ -25,5 +27,5 @@ function getCookie(cname) {
 
 var x = getCookie("hero");
 if(x){
-  document.getElementById(x).src="static/images/"+"hero"+x.trim()+".jpg";
+  document.getElementById("hero").src="static/images/"+"hero"+x.trim()+".jpg";
 }
