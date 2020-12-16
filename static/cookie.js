@@ -4,5 +4,6 @@ function setCookie(cname,value){
   d.setTime(d.getTime()+days);
   var expires="expires="+d.toUTCString();
   document.cookie=cname+"="+value+"; "+expires;
+  document.getElementById(cname).src=value+".jpg";
 
 }
