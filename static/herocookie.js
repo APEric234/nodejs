@@ -31,5 +31,5 @@ if(x){
   document.getElementById("hero").src="static/images/"+"hero"+x.trim()+".jpg";
 }
 if(y){
-  document.getElementById("monster").src="static/images/"+"hero"+y.trim()+".jpg";
+  document.getElementById("monster").src="static/images/"+"monster"+y.trim()+".jpg";
 }
