@@ -11,16 +11,13 @@
     <div class='price'><h1>Roster</h1>
       <ul>
       <% for (var i = 0; i < heros.length; i ++) { %>
-        <% var h_id=heros[i].split("&")[1]; %>
-        <% var name=heros[i].split("&")[0]; %>
         
        <li><button id='temp'>
-         <%= name $>
+         <%= heros[i].split("&")[0] $>
         </button>
          </li>
        
-       <$ var temp=document.getElementById("temp"); $>
-       <$ temp.id=h_id; $>
+       <$document.getElementById("temp").id=heros[i].split("&")[1]; $>
 
        <% } %>
       </ul>
