@@ -5,7 +5,7 @@ function setCookie(cname,value){
   var expires="expires="+d.toUTCString();
   document.cookie=cname+"="+value+"; "+expires;
   
-  document.getElementById(x).src="static/images/"+"cname"+x.trim()+".jpg";
+  document.getElementById(cname).src="static/images/"+"cname"+x.trim()+".jpg";
   
 
 }
