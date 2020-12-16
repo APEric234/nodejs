@@ -26,6 +26,10 @@ function getCookie(cname) {
 }
 
 var x = getCookie("hero");
+var y = getCookie("monster");
 if(x){
   document.getElementById("hero").src="static/images/"+"hero"+x.trim()+".jpg";
+}
+if(y){
+  document.getElementById("monster").src="static/images/"+"hero"+y.trim()+".jpg";
 }
