@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Available Heros</title>
+  </head>
+  <body>
+    <nav>
+      <a href="https://peaceful-spire-17672.herokuapp.com/">Home</a>
+    </nav>
+    <div class='price'><h1>Roster</h1>
+      <ul>
+      <% for (var i = 0; i < heros.length; i ++) { %>
+        <%var h_id=heros[i].split("&")[1];%>
+        <%var name=heros[i].split("&")[0];%>
+        
+       <li><button id='temp'><%name$></button>
+         </li>
+       
+       <$var temp=document.getElementById("temp");$>
+       <$temp.id=h_id$>
+
+       <% } %>
+      </ul>
+  </div>
+    
+  </body>
+</html>
