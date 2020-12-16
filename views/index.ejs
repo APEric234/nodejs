@@ -3,10 +3,17 @@
   <head>
     <title>Welcome to the dungeon</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <div id="hero-section">
+      <img id="hero" src="static/images/blank.png">
+  </div>
+  <div id="monster-section">
+    <img id="monster" src="static/images/blank.png">
+</div>
+  <script src="static/herocookie.js"></script>
   </head>
   <body>
     <form action="/monsters" method="POST">
-      <input class="btn btn-default" type="submit" value="Find Monsters" id="find">
+      <input class="btn btn-default" type="submit" value="Pick a Monster" id="find">
   </form>
   <form action="/battle" method="get">
     <input class="btn btn-default" type="submit" value="Battle!" id="battle">
