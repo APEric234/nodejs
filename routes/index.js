@@ -34,7 +34,7 @@ router.post('/heros', function (req, res) {
     if (err) throw err;
     for (let row of res1.rows) {
       console.log(JSON.stringify(row));
-      names.push(row["name"]+"&"+row["M_key"]);
+      names.push(row["name"]+"&"+row["m_key"]);
     }
     
     res.render('heros', {
