@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/arena.css' />
+    <title>Arena</title>
+  </head>
+      
+  <div id="hero-section">
+    <img id="hero" src="static/images/blank.png">
+</div>
+<div id="monster-section">
+  <img id="monster" src="static/images/blank.png">
+</div>
+  <script src="static/herocookie.js"></script>
+  <body>
+    <% var hero = getCookie("hero");%>
+    <% var message="";%>
+    <% var cookie="";%>
+    <% var id="";%>
+    
+    <% var monster = getCookie("monster");%>
+    <% var date= new Date();%>
+    <% date.setTime(date.getTime() + 2*24*60*60*1000);%>
+    <% if(monster && hero){%>
+      <%  if(monster>hero){%>
+        <% message = "Sorry you have perished try again";%>
+        <% cookie = "monster";%>
+        <% id=monster;%>
+        <% }else{%>
+          <% message = "You Defeated the monster!";%>
+          <% cookie = "hero";%>
+          <% id=hero;}}else{ mesage="You weren't ready to fight"}          } %>
+
+    <% setCookie(cookie,id) %>
+    <nav>
+      <a href="https://peaceful-spire-17672.herokuapp.com/">Home</a>
+    </nav>
+    <div id="hero-section">
+      <img id="hero" src="//:0">
+  </div>
+  <div id="monster-section">
+    <img id="monster" src="//:0">
+</div>
+
+
+    <div class='main'>
+      <h1><%= message %></h1>
+      
+      
+  </div>
+  </body>
+</html>
